@@ -1,17 +1,19 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Country Statistics Comparison</title>
+    <title>Country-wise Participation Analysis</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <style>
         .chart-container {
             font-family: Arial, sans-serif;
             width: 100%;
-            max-width: 1900px;
+            max-width: 1800px;
             margin: 20px auto;
             background-color: #F0F6F6;
             border-radius: 4px;
-            padding: 20px;
+            /* padding: 20px; */
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             overflow-x: auto; 
         }
@@ -29,12 +31,15 @@
         .tooltip {
             position: absolute;
             padding: 10px;
-            background-color: #DCCFEC;
+            /* background-color: #DCCFEC; */
+            /* background-color: gray; */
+            background: rgba(33, 33, 33, 0.9);;
             border: 1px solid #ddd;
             border-radius: 4px;
             pointer-events: none;
             font-size: 12px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: white;
         }
         .legend {
             font-size: 12px;
@@ -58,9 +63,9 @@
     <div class="chart-container"></div>
     <h1></h1>
     <script>
-        const margin = {top: 80, right: 130, bottom: 100, left: 80};
-        const width = 2000 - margin.left - margin.right;
-        const height = 650 - margin.top - margin.bottom;
+        const margin = {top: 60, right: 130, bottom: 100, left: 80};
+        const width = 1900 - margin.left - margin.right;
+        const height = 550 - margin.top - margin.bottom;
 
         const svg = d3.select(".chart-container")
             .append("svg")
@@ -78,7 +83,7 @@
             const x0 = d3.scaleBand()
                 .domain(data.map(d => d.Country))
                 .rangeRound([0, width])
-                .padding(0.3);
+                .padding(0.4);
 
             const x1 = d3.scaleBand()
                 .domain(["Female", "Male"])
