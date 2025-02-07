@@ -7,5 +7,5 @@ cd dv_project_1
 ```
 ### 2. Open in a Browser
 ```sh
-Click on "Go Live" if you are using vs code or double click on the index.html file
+Click on "Go Live" in VS Code
 ```
